@@ -1,22 +1,27 @@
 def find_max_occurred_alphabet(string):
-    alphabet_occurrence_array = [0] * 26
+    alphabet_array = [0] * 26
+    alphabet_a = ord('a')
+    
+    string_lower = string.lower()
+    
+    # 배열을 돌아 count     
+    for char in string :
+        if char != " " :
+            index = ord(char) - alphabet_a
+            alphabet_array[index] += 1  
+            
+    # count 된 배열에서 가장 큰 값의 인덱스 번호 찾기 
+    max_index = 0
+    max_alphabet = 0
+    
+    for index in range(len(alphabet_array)) :
+        if alphabet_array[index] > max_alphabet:
+            max_index = index
+            max_alphabet = alphabet_array[index]
 
-    for char in string:
-        if not char.isalpha():
-            continue
-        arr_index = ord(char) - ord('a')
-        alphabet_occurrence_array[arr_index] += 1
+    max_index = max_index + ord('a')
 
-    max_occurrence = 0
-    max_alphabet_index = 0
-    for index in range(len(alphabet_occurrence_array)):
-        alphabet_occurrence = alphabet_occurrence_array[index]
-        if alphabet_occurrence > max_occurrence:
-            max_occurrence = alphabet_occurrence
-            max_alphabet_index = index
-
-
-    return chr(max_alphabet_index + ord('a'))
+    return chr(max_index)
 
 
 result = find_max_occurred_alphabet
