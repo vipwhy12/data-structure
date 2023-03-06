@@ -6,8 +6,7 @@ input = "abadabac"
 
 def find_not_repeating_first_character(string):
     test = []
-    
-    
+
     for i in range(len(string)):
         check_word = string[i]
         count = 0
