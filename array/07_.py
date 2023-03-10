@@ -15,7 +15,7 @@ def solution(numbers):
         if n < 2:      
             continue
         check = True            
-        for i in range(2,int(n**0.5) + 1):    
+        for i in range(2, int(n**0.5) + 1):    
             if n % i == 0:          
                 check = False
                 break
