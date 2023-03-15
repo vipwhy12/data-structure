@@ -10,6 +10,7 @@ class LinkedList:
 
   def append(self, value):
     cur = self.head
+    
     while cur.next is not None:
       cur = cur.next
     
